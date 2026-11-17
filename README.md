@@ -7,7 +7,7 @@
 ![免安装](https://img.shields.io/badge/绿色版-解压即用-4C9A6A?style=flat-square)
 ![数据](https://img.shields.io/badge/数据-仅存本地-6E675C?style=flat-square)
 
-**[⬇ 直接下载 v1.0.0](https://github.com/Ms67/StickyDesk/releases/download/v1.0.0/StickyDesk-v1.0.0-win64.zip)** ・ [官网](https://ms67.github.io/StickyDesk/) ・ [常见问题](#常见问题)
+**[⬇ 直接下载 v1.0.0](https://github.com/Ms67/StickyDesk/releases/download/v1.0.0/StickyDesk-v1.0.0-win64.zip)** ・ [官网](https://ms67.github.io/StickyDesk/) ・ [常见问题](#常见问题) ・ [English](README.en.md)
 
 ---
 
@@ -81,6 +81,7 @@
 - 便签贴桌面、就地编辑、待办与到期提醒、图片/网址/文件夹识别、全局搜索、八种配色。
 - 托盘集中管理：新建、显示/隐藏、开机自启、便签迁移、分享给好友、Excel 导入导出。
 - 广告位改为按小时轮换、多便签错开显示，文案更淡更小，不抢正文注意力。
+- 界面跟随系统语言：中文系统显示中文，非中文系统自动切换为英文（官网同步提供英文版）。
 
 ---
 
