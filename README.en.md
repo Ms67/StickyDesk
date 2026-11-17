@@ -5,6 +5,7 @@
 ![Platform](https://img.shields.io/badge/platform-Windows%2010%20%2F%2011-0078D6?style=flat-square)
 ![Version](https://img.shields.io/badge/version-v1.0.1-E8B33A?style=flat-square)
 ![Portable](https://img.shields.io/badge/portable-unzip%20and%20run-4C9A6A?style=flat-square)
+![Licence](https://img.shields.io/badge/licence-personal%20use%20only-B4432F?style=flat-square)
 ![Data](https://img.shields.io/badge/data-local%20only-6E675C?style=flat-square)
 
 **[⬇ Download v1.0.1](https://github.com/Ms67/StickyDesk/releases/download/v1.0.1/StickyDesk-v1.0.1-win64.zip)** ・ [Website](https://ms67.github.io/StickyDesk/en.html) ・ [FAQ](#faq) ・ [中文说明](README.md)
@@ -40,7 +41,7 @@ Every version lives on the [Releases](https://github.com/Ms67/StickyDesk/release
 
 - **Notes live on the desktop itself** — they are attached to the desktop layer, so they survive `Win + D` and “Show desktop”, take no taskbar space, and never cover other windows.
 - **Click and type** — click the note body to edit in place; there is no “Edit” button and changes save themselves. The title stays pinned while the body scrolls.
-- **To-dos with due reminders** — items start with a small square: **click the square while editing to tick it** (click again to untick; `Ctrl + D` still works). Give any to-do a due time (`Ctrl + Shift + T`) and a countdown badge appears at the end of the line, with popups at 9:30 on the due day, 1 hour before, and 5 minutes before.
+- **To-dos with due reminders** — items start with a hollow square: **click the square while editing to tick it** (click again to untick; `Ctrl + D` still works). Give any to-do a due time (`Ctrl + Shift + T`) and a countdown badge appears at the end of the line, with popups at 9:30 on the due day, 1 hour before, and 5 minutes before.
 - **Images, links and folders** — paste a screenshot straight into a note; click a URL to open it in the browser, or a local path to open the folder in Explorer.
 - **Global search** — tray menu → *Search notes* searches every note and jumps to the matching line.
 - **Seven palettes** — yellow / green / pink / purple / blue / gray / charcoal, per note.
@@ -77,11 +78,24 @@ The UI follows the Windows display language: Chinese on Chinese systems, English
 
 ---
 
+## Licence
+
+**Personal use only.** Commercial use, modification, reverse engineering and any form of redistribution are prohibited.
+
+| | |
+| --- | --- |
+| ✅ Allowed | Install and run on devices you own or personally use; keep a backup copy; pass the **complete, unmodified** package on to other individuals free of charge |
+| ❌ Not allowed | Use by or inside a company, agency, team or any organisation; selling, renting, bundling with hardware or services, charging in any form, third-party advertising; modifying, localising, repackaging, splitting or embedding into other products; decompiling, disassembling, unpacking, debugging or cracking; removing the ad slot, copyright marks or statistics; uploading modified / ad-free / renamed builds to download sites, app stores, cloud links or code hosting; sublicensing or transferring rights |
+
+Full terms (Chinese and English) are in **[LICENSE](LICENSE)**. Any breach terminates the licence immediately and automatically, and you must delete every copy within 24 hours; the author reserves the right to pursue legal remedies.
+
+---
+
 ## Changelog
 
 ### v1.0.1 — 2026-11-17
 
-- **Square bullets**: main items and sub-items now start with a small square instead of a dot. While editing, click the square to tick an item, click again to untick (`Ctrl + D` and the format-bar ✓ still work).
+- **Hollow-square bullets**: main items and sub-items now start with a hollow square instead of a dot, with a tick drawn inside once done. While editing, click the square to tick an item, click again to untick (`Ctrl + D` and the format-bar ✓ still work).
 - **No ads in the English UI**: non-Chinese systems get no ad slot and no ad fetching — the whole title row belongs to your title.
 - **New-user statistic**: the first launch records one anonymous “new user” event, batched and retried like every other statistic.
 - Older versions stay available in Releases, so you can always roll back.
