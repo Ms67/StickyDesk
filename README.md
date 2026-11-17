@@ -7,7 +7,7 @@
 ![免安装](https://img.shields.io/badge/绿色版-解压即用-4C9A6A?style=flat-square)
 ![数据](https://img.shields.io/badge/数据-仅存本地-6E675C?style=flat-square)
 
-**[⬇ 下载最新版](https://github.com/Ms67/StickyDesk/releases/latest)** ・ [官网](https://ms67.github.io/StickyDesk/) ・ [常见问题](#常见问题)
+**[⬇ 直接下载 v1.0.0](https://github.com/Ms67/StickyDesk/releases/download/v1.0.0/StickyDesk-v1.0.0-win64.zip)** ・ [官网](https://ms67.github.io/StickyDesk/) ・ [常见问题](#常见问题)
 
 ---
 
