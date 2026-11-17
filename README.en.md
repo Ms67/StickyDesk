@@ -3,11 +3,11 @@
 > Pin to-dos and ideas straight onto the desktop, always in sight. No installer, no sign-up, all data stays on your PC.
 
 ![Platform](https://img.shields.io/badge/platform-Windows%2010%20%2F%2011-0078D6?style=flat-square)
-![Version](https://img.shields.io/badge/version-v1.0.0-E8B33A?style=flat-square)
+![Version](https://img.shields.io/badge/version-v1.0.1-E8B33A?style=flat-square)
 ![Portable](https://img.shields.io/badge/portable-unzip%20and%20run-4C9A6A?style=flat-square)
 ![Data](https://img.shields.io/badge/data-local%20only-6E675C?style=flat-square)
 
-**[⬇ Download v1.0.0](https://github.com/Ms67/StickyDesk/releases/download/v1.0.0/StickyDesk-v1.0.0-win64.zip)** ・ [Website](https://ms67.github.io/StickyDesk/en.html) ・ [FAQ](#faq) ・ [中文说明](README.md)
+**[⬇ Download v1.0.1](https://github.com/Ms67/StickyDesk/releases/download/v1.0.1/StickyDesk-v1.0.1-win64.zip)** ・ [Website](https://ms67.github.io/StickyDesk/en.html) ・ [FAQ](#faq) ・ [中文说明](README.md)
 
 ---
 
@@ -17,14 +17,14 @@ Every version lives on the [Releases](https://github.com/Ms67/StickyDesk/release
 
 | | |
 | --- | --- |
-| Latest version | **v1.0.0** (2026-11-17) |
-| Package | `StickyDesk-v1.0.0-win64.zip` (about 43.8 MB) |
+| Latest version | **v1.0.1** (2026-11-17) |
+| Package | `StickyDesk-v1.0.1-win64.zip` (about 43.9 MB) |
 | System | Windows 10 / 11, 64-bit |
 | Install | Portable — unzip and run, no installer, no admin rights |
 
 ### Three steps
 
-1. Download `StickyDesk-v1.0.0-win64.zip` and **unzip it into an empty folder** (for example `D:\StickyDesk`);
+1. Download `StickyDesk-v1.0.1-win64.zip` and **unzip it into an empty folder** (for example `D:\StickyDesk`);
 2. Double-click `StickyDesk-V2.exe` — the sample notes appear on your desktop;
 3. From then on everything lives in the **note icon in the notification area**: right-click for the menu, double-click to show all notes.
 
@@ -40,7 +40,7 @@ Every version lives on the [Releases](https://github.com/Ms67/StickyDesk/release
 
 - **Notes live on the desktop itself** — they are attached to the desktop layer, so they survive `Win + D` and “Show desktop”, take no taskbar space, and never cover other windows.
 - **Click and type** — click the note body to edit in place; there is no “Edit” button and changes save themselves. The title stays pinned while the body scrolls.
-- **To-dos with due reminders** — tick items done with `Ctrl + D`; give any to-do a due time (`Ctrl + Shift + T`) and a countdown badge appears at the end of the line, with popups at 9:30 on the due day, 1 hour before, and 5 minutes before.
+- **To-dos with due reminders** — items start with a small square: **click the square while editing to tick it** (click again to untick; `Ctrl + D` still works). Give any to-do a due time (`Ctrl + Shift + T`) and a countdown badge appears at the end of the line, with popups at 9:30 on the due day, 1 hour before, and 5 minutes before.
 - **Images, links and folders** — paste a screenshot straight into a note; click a URL to open it in the browser, or a local path to open the folder in Explorer.
 - **Global search** — tray menu → *Search notes* searches every note and jumps to the matching line.
 - **Seven palettes** — yellow / green / pink / purple / blue / gray / charcoal, per note.
@@ -53,7 +53,8 @@ Every version lives on the [Releases](https://github.com/Ms67/StickyDesk/release
 
 - Notes are stored in `stickydesk.db` (SQLite) next to the app — **no network, no upload, no account**.
 - Uninstalling means deleting the folder. To keep your notes, delete only the exe and keep `stickydesk.db`.
-- On startup the app fetches one round of title-bar ad copy from a public list (with offline caching). That has nothing to do with your notes.
+- On startup the app fetches one round of title-bar ad copy from a public list (with offline caching). That has nothing to do with your notes. **Non-Chinese systems load no ads at all.**
+- Anonymous usage statistics: ad impressions / views / clicks, plus one “new user” record on first launch (random device id and version — no personal data, no note content). Batched every 30 minutes with automatic retry; leave `endpoint` empty in `ad_report.json` to turn it off completely.
 
 ---
 
@@ -77,6 +78,13 @@ The UI follows the Windows display language: Chinese on Chinese systems, English
 ---
 
 ## Changelog
+
+### v1.0.1 — 2026-11-17
+
+- **Square bullets**: main items and sub-items now start with a small square instead of a dot. While editing, click the square to tick an item, click again to untick (`Ctrl + D` and the format-bar ✓ still work).
+- **No ads in the English UI**: non-Chinese systems get no ad slot and no ad fetching — the whole title row belongs to your title.
+- **New-user statistic**: the first launch records one anonymous “new user” event, batched and retried like every other statistic.
+- Older versions stay available in Releases, so you can always roll back.
 
 ### v1.0.0 — 2026-11-17
 
