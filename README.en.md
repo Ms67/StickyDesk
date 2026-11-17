@@ -71,6 +71,9 @@ Tray → *Migrate notes*, then unzip the pack on the new PC and double-click the
 **How do I uninstall it?**
 Quit from the tray menu, then delete the folder. Turn off *Launch at startup* in the tray menu first if you enabled it.
 
+**Can I change the interface language?**
+The UI follows the Windows display language: Chinese on Chinese systems, English everywhere else. To force one, start the app with `STICKYDESK_LANG=zh` or `STICKYDESK_LANG=en`.
+
 ---
 
 ## Changelog
