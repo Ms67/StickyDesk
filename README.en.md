@@ -26,10 +26,10 @@ Every version lives on the [Releases](https://github.com/Ms67/StickyDesk/release
 ### Three steps
 
 1. Download `StickyDesk-v1.0.2-win64.zip` and **unzip it into an empty folder** (for example `D:\StickyDesk`);
-2. Double-click `StickyDesk-V2.exe` — the sample notes appear on your desktop;
+2. Double-click `StickyDesk-1.0.2.exe` — the sample notes appear on your desktop;
 3. From then on everything lives in the **note icon in the notification area**: right-click for the menu, double-click to show all notes.
 
-> `StickyDesk-V2.exe` and `stickydesk.db` must stay in the same folder — the app only reads the database next to it.
+> `StickyDesk-1.0.2.exe` and `stickydesk.db` must stay in the same folder — the app only reads the database next to it.
 > Do not put them in `C:\Program Files` or any folder that needs administrator rights to write.
 
 > The first run may show “Windows protected your PC”. The app has no code-signing certificate;
