@@ -54,7 +54,7 @@ Every version lives on the [Releases](https://github.com/Ms67/StickyDesk/release
 
 - Notes are stored in `stickydesk.db` (SQLite) next to the app — **no upload, no account**.
 - Uninstalling means deleting the folder. To keep your notes, delete only the exe and keep `stickydesk.db`.
-- Network access is used only to fetch title-bar ad copy from a public list (with offline caching). That has nothing to do with your notes. **Non-Chinese systems load no ads at all.**
+- Network access is used only to fetch title-bar ad copy from a public list (with offline caching). That has nothing to do with your notes.
 
 ---
 
