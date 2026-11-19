@@ -52,11 +52,9 @@ Every version lives on the [Releases](https://github.com/Ms67/StickyDesk/release
 
 ## Data & privacy
 
-- Notes are stored in `stickydesk.db` (SQLite) next to the app — **no network, no upload, no account**.
+- Notes are stored in `stickydesk.db` (SQLite) next to the app — **no upload, no account**.
 - Uninstalling means deleting the folder. To keep your notes, delete only the exe and keep `stickydesk.db`.
-- On startup the app fetches one round of title-bar ad copy from a public list (with offline caching). That has nothing to do with your notes. **Non-Chinese systems load no ads at all.**
-- Anonymous usage statistics: ad impressions / views / clicks, plus one “new user” record on first launch (random device id and version — no personal data, no note content). Batched every 30 minutes with automatic retry; leave `endpoint` empty in `ad_report.json` to turn it off completely.
-- Online presence: while the app is running it sends a tiny heartbeat every 5 minutes (random device id, version, UI language) so the author can see how many people are using it right now. It reads no notes and carries no content; clearing `endpoint` above stops it too.
+- Network access is used only to fetch title-bar ad copy from a public list (with offline caching). That has nothing to do with your notes. **Non-Chinese systems load no ads at all.**
 
 ---
 
@@ -89,8 +87,6 @@ The UI follows the Windows display language: Chinese on Chinese systems, English
 | ❌ Not allowed | Use by or inside a company, agency, team or any organisation; selling, renting, bundling with hardware or services, charging in any form, third-party advertising; modifying, localising, repackaging, splitting or embedding into other products; decompiling, disassembling, unpacking, debugging or cracking; removing the ad slot, copyright marks or statistics; uploading modified / ad-free / renamed builds to download sites, app stores, cloud links or code hosting; sublicensing or transferring rights |
 
 Full terms (Chinese and English) are in **[LICENSE](LICENSE)**. Any breach terminates the licence immediately and automatically, and you must delete every copy within 24 hours; the author reserves the right to pursue legal remedies.
-
-> **Data collection — use means consent.** By installing or using the app you agree to the anonymous data collection described in clause 10 of the LICENSE: ad impressions / views / clicks, one “new user” record on first launch, and an online heartbeat while running (random device id, version and UI language only). **If you do not agree, do not use it**; if already installed, delete every copy. See [clause 10](LICENSE).
 
 ---
 
