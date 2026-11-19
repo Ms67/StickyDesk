@@ -119,8 +119,10 @@ Copyright (C) 2026 Ms67. All rights reserved.
 1. 本软件会进行**有限的、匿名的**数据收集，仅用于了解使用情况与推广效果：
    (1) 统计事件：广告的展示 / 查看 / 点击次数；
    (2) 新用户：软件首次在这台设备上启动时的一条记录；
-   (3) 在线状态：软件运行期间每 5 分钟一次心跳，用于统计当前在线人数。
-   以上记录只包含**随机生成的设备标识、软件版本号、界面语言、时间戳**。
+   (3) 在线状态：软件运行期间每 5 分钟一次心跳，用于统计当前在线人数；
+   (4) 地区分布：服务端从本次网络请求的 IP 解析出的国家 / 省份 / 城市等粗略地区。
+   以上记录只包含**随机生成的设备标识、软件版本号、界面语言、时间戳与粗略地区**；
+   原始 IP 地址不会被写入统计数据库。
 
 2. 明确**不收集**：便签文字与图片、文件路径与文件名、账号与密码、姓名、电话、
    邮箱、身份证件、精确位置、键盘输入、屏幕内容、剪贴板、聊天记录，以及任何
@@ -130,11 +132,7 @@ Copyright (C) 2026 Ms67. All rights reserved.
    本条款所述的匿名数据收集与使用。**如不同意，请不要安装或使用本软件**；
    若已安装，请立即退出并删除本软件的全部副本。
 
-4. 您也可以在程序目录的 `ad_report.json` 中把 `endpoint` 留空（或把 `enabled`
-   设为 `false`）以关闭上报。这是本协议明确允许的例外，不属于第三条第 4 项
-   所禁止的「规避」行为。
-
-5. 所收集的数据仅用于统计、排错与改进本软件，不向任何第三方出售、出租或提供，
+4. 所收集的数据仅用于统计、排错与改进本软件，不向任何第三方出售、出租或提供，
    法律法规另有强制要求的除外；数据保存期限不超过实现上述目的所必需的时间。
 
 --------------------------------------------------------------------------------
@@ -223,10 +221,13 @@ not agree, delete all copies of the Software immediately and do not use it.
 10. ANONYMOUS DATA COLLECTION — USE MEANS CONSENT
    (a) The Software collects a limited, anonymous set of data, used only to
        understand usage and ad performance: ad impressions / views / clicks; one
-       "new user" record when the Software first runs on a device; and an online
+       "new user" record when the Software first runs on a device; an online
        heartbeat every 5 minutes while it is running, used to count how many
-       people are online right now. These records contain only a randomly
-       generated device id, the version, the UI language and a timestamp.
+       people are online right now; and a coarse region (country / province /
+       city) resolved by the server from the IP of the network request. These
+       records contain only a randomly generated device id, the version, the UI
+       language, a timestamp and that coarse region. Raw IP addresses are never
+       written to the statistics database.
    (b) The Software never collects note text or images, file paths or names,
        accounts or passwords, names, phone numbers, e-mail addresses, identity
        documents, precise location, keystrokes, screen contents, clipboard,
@@ -235,9 +236,6 @@ not agree, delete all copies of the Software immediately and do not use it.
        you have read and expressly consent to the collection and use described
        above. IF YOU DO NOT AGREE, DO NOT INSTALL OR USE THE SOFTWARE; if it is
        already installed, exit it and delete every copy immediately.
-   (d) You may disable reporting by leaving `endpoint` empty (or setting
-       `enabled` to `false`) in `ad_report.json` in the app folder. This is a
-       permitted exception and is not a circumvention under clause 3(d).
-   (e) Collected data is used only for statistics, troubleshooting and improving
+   (d) Collected data is used only for statistics, troubleshooting and improving
        the Software, is never sold, rented or provided to third parties except
        where required by law, and is kept no longer than necessary.
