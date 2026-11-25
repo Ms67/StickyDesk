@@ -9,39 +9,41 @@ Copyright (C) 2026 Ms67. All rights reserved.
 全部条款约束。若不同意，请立即删除本软件的全部副本，不要使用。
 
 --------------------------------------------------------------------------------
-一、授权范围（只允许个人使用）
+一、授权范围（任何场景均可使用，但仅限原样软件）
 --------------------------------------------------------------------------------
 
-1. 作者仅授予您一项**有限的、可撤销的、不可转让、不可再许可、非排他**的许可：
-   由自然人本人在**自主拥有或本人专用**的设备上，为**个人、非商业、非营利用途**
-   安装并运行本软件。
+1. 作者授予您一项**有限的、可撤销的、不可转让、不可再许可、非排他**的许可：
+   可在您拥有或管理的设备上安装、运行本软件的**未经修改的原始版本**。
+   **使用场景不受限制**——个人、家庭、公司、企业、政府机关、学校、医院、社团、
+   工作室、团队或任何机构内部，以及任何商业或非商业用途，均可自由使用本软件
+   处理自己的事务。
 
-2. 明确禁止任何**组织性使用**：不得在公司、企业、政府机关、学校、医院、社团、
-   工作室、团队或任何机构内部使用本软件处理其业务、事务或为第三方提供服务，
-   无论是否收费。
+2. 本许可仅授予对原样软件副本的**终端使用权**；不包含修改、衍生开发、再分发、
+   以本软件为基础开发产品或提供服务等权利（见第三条）。
 
-3. 一份许可对应一位自然人用户，可用于该用户本人拥有的多台设备。
+3. 一份许可可用于您拥有或管理的多台设备，无使用期限限制；软件免费提供。
 
 --------------------------------------------------------------------------------
 二、允许的行为
 --------------------------------------------------------------------------------
 
-1. 按第一条在个人设备上安装、运行本软件。
-2. 为备份目的保留本软件的完整安装包。
-3. **原样转发**：可将本软件的完整、未经任何修改的安装包，免费、无偿地转发给
-   其他个人用户；对方同样须遵守本协议。转发时不得删除、替换或添加任何文件，
-   不得更改包名、文件名、图标或任何标识。
+1. 在个人、公司或机构的设备上安装、运行本软件，用于任何合法用途（含商业用途）。
+2. 为备份目的保留本软件的完整、未修改安装包。
+3. **原样转发**：可将本软件的完整、未经任何修改的安装包转发给他人；对方同样须
+   遵守本协议。转发时不得删除、替换或添加任何文件，不得更改包名、文件名、图标
+   或任何标识，不得以任何形式收费。
 
 --------------------------------------------------------------------------------
-三、禁止的行为（严禁商用、改造、逆向）
+三、禁止的行为（严禁盗版、修改与商业再开发）
 --------------------------------------------------------------------------------
 
-除本协议明确允许的行为外，一切使用方式均被禁止。特别是，您**不得**：
+除本协议明确允许的行为外，一切**修改、衍生开发、再分发与商业化利用本软件**的
+行为均被禁止。特别是，您**不得**：
 
-1. **商业使用**：出售、出租、出借、转售、分销、代销本软件；将本软件用于任何
-   营利活动、商业服务、收费培训、外包交付；作为赠品、促销品、硬件或服务的
-   附加物分发；在软件内或软件上投放第三方广告、导流、变现；以本软件为基础
-   提供任何收费或免费的商业服务（含 SaaS、远程桌面、托管等形式）。
+1. **商业再开发**：以本软件为基础，或利用其全部或部分，开发、运营、销售或许可
+   任何产品或服务（含改名版、白标版、SaaS / 托管服务、嵌入其他产品）；出售、
+   出租、出借、转售、分销、代销本软件；将本软件作为赠品、促销品或硬件/服务的
+   附加物收费分发；基于本软件提供收费服务；在软件内投放第三方广告、导流或变现。
 
 2. **改造与二次开发**：修改、改编、翻译、本地化、重制、拆分、合并本软件的
    全部或部分（含源代码、界面文案、图标、图片、音频、数据结构、数据库结构）；
@@ -55,12 +57,13 @@ Copyright (C) 2026 Ms67. All rights reserved.
    许可声明、广告位、使用统计或任何功能限制；绕过、破解、伪造任何校验、鉴权
    或保护机制。
 
-5. **再分发**：将本软件（含修改版、汉化版、去广告版、破解版、改名版、精简版）
-   上传至任何软件下载站、应用商店、网盘公开链接、代码托管平台、论坛、社交平台
-   或镜像站点；以种子、磁力、聚合链接等形式传播。
+5. **盗版与再分发**：将本软件（含修改版、汉化版、去广告版、破解版、改名版、
+   精简版）上传至任何软件下载站、应用商店、网盘公开链接、代码托管平台、论坛、
+   社交平台或镜像站点；以种子、磁力、聚合链接等形式传播；冒用作者名义授权
+   他人使用或分发。
 
-6. **权利转移**：再许可、转让、质押本协议项下的任何权利；将本软件作为资产
-   出售、抵债、出资或随企业一并转让。
+6. **权利转移**：再许可、转让、质押本协议项下的任何权利；将本软件单独作为
+   商品出售、抵债或出资。
 
 7. 以其他任何超出第一条授权范围的方式使用本软件。
 
@@ -148,25 +151,35 @@ By downloading, extracting, installing, running or otherwise using the Software,
 you confirm that you have read and agree to be bound by all terms below. If you do
 not agree, delete all copies of the Software immediately and do not use it.
 
-1. GRANT — PERSONAL USE ONLY
+1. GRANT — USE FREELY, ORIGINAL BUILD ONLY
    The author grants you a limited, revocable, non-transferable, non-sublicensable,
-   non-exclusive licence to install and run the Software on devices you own or
-   personally use, solely for your own personal, non-commercial, non-profit use.
-   Use by or within any organisation (company, government body, school, hospital,
-   club, studio, team or any institution) for its business or for serving third
-   parties is expressly prohibited, whether paid or unpaid. One licence per person.
+   non-exclusive licence to install and run the unmodified, original copy of the
+   Software on devices you own or manage. There is no restriction on where or why
+   you use it: personal, household, company, enterprise, government, school,
+   hospital, club, studio, team or any organisation, and commercial as well as
+   non-commercial purposes, are all permitted. This grant covers only end-user use
+   of the unmodified Software; it does not include the right to modify, create
+   derivatives, redistribute, or build products or services on top of it (clause 3).
+   One licence may be used on any number of devices you own or manage, with no
+   time limit. The Software is free of charge.
 
 2. PERMITTED
-   Install and run the Software as described above; keep a backup copy of the
-   complete, unmodified installer package; pass the complete, unmodified package
-   on to other individuals free of charge, provided they accept this Agreement.
-   No file may be removed, replaced or added, and no name, icon or marking changed.
+   Install and run the Software for any lawful purpose, including commercial use;
+   keep a backup copy of the complete, unmodified installer package; pass the
+   complete, unmodified package on to others free of charge, provided they accept
+   this Agreement. No file may be removed, replaced or added, and no name, icon or
+   marking changed.
 
-3. PROHIBITED — NO COMMERCIAL USE, MODIFICATION OR REVERSE ENGINEERING
-   You must not:
-   a) use the Software commercially — sell, rent, lend, resell, distribute, bundle
-      with hardware or services, use in any revenue-generating activity, in SaaS or
-      hosted form, or with third-party advertising or monetisation;
+3. PROHIBITED — NO PIRACY, MODIFICATION OR COMMERCIAL REDEVELOPMENT
+   All modification, derivative development, redistribution and commercial
+   exploitation of the Software other than the use expressly permitted here are
+   prohibited. In particular, you must not:
+   a) commercially redevelop — build, operate, sell or license any product or
+      service based on the Software or any part of it (including renamed,
+      white-label, SaaS or hosted versions, or embedding it in other products);
+      sell, rent, lend, resell, distribute or bundle the Software; charge for it as
+      a giveaway, promotional item or add-on to hardware/services; offer paid
+      services based on it; place third-party ads, referral or monetisation in it;
    b) modify, adapt, translate, localise, repackage, split, merge or create
       derivative works from the Software or any part of it (code, UI text, icons,
       images, audio, data or database structures), or embed it in other products;
@@ -176,12 +189,12 @@ not agree, delete all copies of the Software immediately and do not use it.
    d) remove, obscure or disable any copyright notice, author attribution, licence
       notice, ad slot, usage statistics or functional limitation, or bypass any
       check, authentication or protection mechanism;
-   e) redistribute the Software or any modified, localised, ad-free, cracked,
-      renamed or trimmed build through download sites, app stores, public cloud
-      links, code hosting platforms, forums, social media, mirrors, torrents or
-      aggregators;
-   f) sublicense, assign, pledge or otherwise transfer any rights, or treat the
-      Software as an asset to be sold or transferred;
+   e) pirate or redistribute the Software or any modified, localised, ad-free,
+      cracked, renamed or trimmed build through download sites, app stores, public
+      cloud links, code hosting platforms, forums, social media, mirrors, torrents
+      or aggregators, or purport to authorise others to use or distribute it;
+   f) sublicense, assign, pledge or otherwise transfer any rights, or sell the
+      Software as a standalone asset;
    g) use the Software in any other way beyond the grant in clause 1.
 
 4. RESERVATION OF RIGHTS
