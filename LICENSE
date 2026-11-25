@@ -122,7 +122,8 @@ Copyright (C) 2026 Ms67. All rights reserved.
 1. 本软件会进行**有限的、匿名的**数据收集，仅用于了解使用情况与推广效果：
    (1) 统计事件：广告的展示 / 查看 / 点击次数；
    (2) 新用户：软件首次在这台设备上启动时的一条记录；
-   (3) 在线状态：软件运行期间每 5 分钟一次心跳，用于统计当前在线人数；
+   (3) 在线状态：软件运行期间按北京时间每天最多上报三次（08:00 / 12:00 / 20:00），
+       用于统计当日活跃与近期在线设备；
    (4) 地区分布：服务端从本次网络请求的 IP 解析出的国家 / 省份 / 城市等粗略地区。
    以上记录只包含**随机生成的设备标识、软件版本号、界面语言、时间戳与粗略地区**；
    原始 IP 地址不会被写入统计数据库。
@@ -235,9 +236,10 @@ not agree, delete all copies of the Software immediately and do not use it.
    (a) The Software collects a limited, anonymous set of data, used only to
        understand usage and ad performance: ad impressions / views / clicks; one
        "new user" record when the Software first runs on a device; an online
-       heartbeat every 5 minutes while it is running, used to count how many
-       people are online right now; and a coarse region (country / province /
-       city) resolved by the server from the IP of the network request. These
+       status report at most three times a day (08:00 / 12:00 / 20:00 Beijing
+       time) while it is running, used to count daily active and recently
+       online devices; and a coarse region (country / province / city) resolved
+       by the server from the IP of the network request. These
        records contain only a randomly generated device id, the version, the UI
        language, a timestamp and that coarse region. Raw IP addresses are never
        written to the statistics database.
