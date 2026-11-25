@@ -3,12 +3,12 @@
 > 把待办与灵感直接贴在桌面上，抬眼就能看见。免安装、免登录、数据全在本地。
 
 ![平台](https://img.shields.io/badge/平台-Windows%2010%20%2F%2011-0078D6?style=flat-square)
-![版本](https://img.shields.io/badge/版本-v1.0.2-E8B33A?style=flat-square)
+![版本](https://img.shields.io/badge/版本-v1.0.3-E8B33A?style=flat-square)
 ![免安装](https://img.shields.io/badge/绿色版-解压即用-4C9A6A?style=flat-square)
 ![授权](https://img.shields.io/badge/授权-可自由使用%20%2F%20禁止盗版改造-4C9A6A?style=flat-square)
 ![数据](https://img.shields.io/badge/数据-仅存本地-6E675C?style=flat-square)
 
-**[⬇ 直接下载 v1.0.2](https://github.com/Ms67/StickyDesk/releases/download/v1.0.2/StickyDesk-v1.0.2-win64.zip)** ・ [官网](https://ms67.github.io/StickyDesk/) ・ [常见问题](#常见问题) ・ [English](README.en.md)
+**[⬇ 直接下载 v1.0.3](https://github.com/Ms67/StickyDesk/releases/download/v1.0.3/StickyDesk-v1.0.3-win64.zip)** ・ [官网](https://ms67.github.io/StickyDesk/) ・ [常见问题](#常见问题) ・ [English](README.en.md)
 
 ---
 
@@ -18,15 +18,15 @@
 
 | 项目 | 说明 |
 | --- | --- |
-| 最新版本 | **v1.0.2**（2026-11-17） |
-| 安装包 | `StickyDesk-v1.0.2-win64.zip`（约 44 MB） |
+| 最新版本 | **v1.0.3**（2026-11-25） |
+| 安装包 | `StickyDesk-v1.0.3-win64.zip`（约 44 MB） |
 | 系统 | Windows 10 / 11（64 位） |
 | 安装方式 | 绿色版，解压即用，无需安装、无需管理员权限 |
 
 ### 三步开始用
 
-1. 下载 `StickyDesk-v1.0.2-win64.zip`，**解压到一个空文件夹**（例如 `D:\StickyDesk`）；
-2. 双击文件夹里的 `StickyDesk-1.0.2.exe`，预置的便签就会出现在桌面；
+1. 下载 `StickyDesk-v1.0.3-win64.zip`，**解压到一个空文件夹**（例如 `D:\StickyDesk`）；
+2. 双击文件夹里的 `StickyDesk-1.0.3.exe`，预置的便签就会出现在桌面；
 3. 之后所有操作都在**任务栏右下角通知区的便签图标**里：右键出菜单，双击显示全部便签。
 
 > `exe` 与 `stickydesk.db` 必须放在同一个文件夹，程序只认自己旁边的数据。
@@ -96,7 +96,8 @@
 
 | 版本 | 日期 | 状态 |
 | --- | --- | --- |
-| v1.0.2 | 2026-11-17 | 当前版本 |
+| v1.0.3 | 2026-11-25 | 当前版本 |
+| v1.0.2 | 2026-11-17 | 历史版本，可在 Releases 下载 |
 | v1.0.1 | 2026-11-17 | 历史版本，可在 Releases 下载 |
 | v1.0.0 | 2026-11-17 | 首个公开版本，可在 Releases 下载 |
 
