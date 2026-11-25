@@ -3,12 +3,12 @@
 > Pin to-dos and ideas straight onto the desktop, always in sight. No installer, no sign-up, all data stays on your PC.
 
 ![Platform](https://img.shields.io/badge/platform-Windows%2010%20%2F%2011-0078D6?style=flat-square)
-![Version](https://img.shields.io/badge/version-v1.0.2-E8B33A?style=flat-square)
+![Version](https://img.shields.io/badge/version-v1.0.3-E8B33A?style=flat-square)
 ![Portable](https://img.shields.io/badge/portable-unzip%20and%20run-4C9A6A?style=flat-square)
 ![Licence](https://img.shields.io/badge/licence-free%20to%20use%20%2F%20no%20mods%20or%20piracy-4C9A6A?style=flat-square)
 ![Data](https://img.shields.io/badge/data-local%20only-6E675C?style=flat-square)
 
-**[⬇ Download v1.0.2](https://github.com/Ms67/StickyDesk/releases/download/v1.0.2/StickyDesk-v1.0.2-win64.zip)** ・ [Website](https://ms67.github.io/StickyDesk/en.html) ・ [FAQ](#faq) ・ [中文说明](README.md)
+**[⬇ Download v1.0.3](https://github.com/Ms67/StickyDesk/releases/download/v1.0.3/StickyDesk-v1.0.3-win64.zip)** ・ [Website](https://ms67.github.io/StickyDesk/en.html) ・ [FAQ](#faq) ・ [中文说明](README.md)
 
 ---
 
@@ -18,18 +18,18 @@ Every version lives on the [Releases](https://github.com/Ms67/StickyDesk/release
 
 | | |
 | --- | --- |
-| Latest version | **v1.0.2** (2026-11-17) |
-| Package | `StickyDesk-v1.0.2-win64.zip` (about 44 MB) |
+| Latest version | **v1.0.3** (2026-11-25) |
+| Package | `StickyDesk-v1.0.3-win64.zip` (about 44 MB) |
 | System | Windows 10 / 11, 64-bit |
 | Install | Portable — unzip and run, no installer, no admin rights |
 
 ### Three steps
 
-1. Download `StickyDesk-v1.0.2-win64.zip` and **unzip it into an empty folder** (for example `D:\StickyDesk`);
-2. Double-click `StickyDesk-1.0.2.exe` — the sample notes appear on your desktop;
+1. Download `StickyDesk-v1.0.3-win64.zip` and **unzip it into an empty folder** (for example `D:\StickyDesk`);
+2. Double-click `StickyDesk-1.0.3.exe` — the sample notes appear on your desktop;
 3. From then on everything lives in the **note icon in the notification area**: right-click for the menu, double-click to show all notes.
 
-> `StickyDesk-1.0.2.exe` and `stickydesk.db` must stay in the same folder — the app only reads the database next to it.
+> `StickyDesk-1.0.3.exe` and `stickydesk.db` must stay in the same folder — the app only reads the database next to it.
 > Do not put them in `C:\Program Files` or any folder that needs administrator rights to write.
 
 > The first run may show “Windows protected your PC”. The app has no code-signing certificate;
@@ -96,7 +96,8 @@ Released versions only — no change-by-change notes. To upgrade, unzip over the
 
 | Version | Date | Status |
 | --- | --- | --- |
-| v1.0.2 | 2026-11-17 | Current |
+| v1.0.3 | 2026-11-25 | Current |
+| v1.0.2 | 2026-11-17 | Previous, still on Releases |
 | v1.0.1 | 2026-11-17 | Previous, still on Releases |
 | v1.0.0 | 2026-11-17 | First public release, still on Releases |
 
