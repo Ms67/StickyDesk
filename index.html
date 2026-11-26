@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StickyDesk 桌面便签 — 把待办贴在桌面上</title>
+<meta name="description" content="StickyDesk 是一款 Windows 桌面便签：便签直接贴在桌面上，点开就写，支持待办到期提醒、图片与网址识别、全局搜索。绿色免安装，数据只存本地。">
+<meta property="og:title" content="StickyDesk 桌面便签">
+<meta property="og:description" content="把待办与灵感直接贴在桌面上，抬眼就能看见。免安装、免登录、数据全在本地。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ms67.github.io/StickyDesk/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ms67.github.io/StickyDesk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="StickyDesk 桌面便签">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="StickyDesk 桌面便签">
+<meta name="twitter:description" content="把待办与灵感直接贴在桌面上，抬眼就能看见。免安装、免登录、数据全在本地。">
+<meta name="twitter:image" content="https://ms67.github.io/StickyDesk/og-image.png">
+<link rel="canonical" href="https://ms67.github.io/StickyDesk/">
+<link rel="alternate" hreflang="zh-CN" href="https://ms67.github.io/StickyDesk/">
+<link rel="alternate" hreflang="en" href="https://ms67.github.io/StickyDesk/en.html">
+<link rel="alternate" hreflang="x-default" href="https://ms67.github.io/StickyDesk/">
+<meta name="theme-color" content="#FBF8F2">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<script>
+/* 首次访问按浏览器语言选页面；用户手动切换过就记住选择。
+   爬虫 / 社交分享抓取时跳过跳转，保证两种语言的页面都能被抓到、预览图正确。 */
+(function () {
+  try {
+    var ua = (navigator.userAgent || "").toLowerCase();
+    if (/bot|crawler|spider|slurp|bingpreview|facebookexternalhit|twitterbot|whatsapp|telegram/i.test(ua)) return;
+    var here = /\/en\.html$/.test(location.pathname) ? "en" : "zh";
+    var pref = localStorage.getItem("sd_lang");
+    if (!pref) {
+      var l = (navigator.languages && navigator.languages[0]) || navigator.language || "";
+      pref = /^zh/i.test(l) ? "zh" : "en";
+      localStorage.setItem("sd_lang", pref);
+    }
+    if (pref !== here) location.replace(pref === "en" ? "en.html" : "index.html");
+  } catch (e) {}
+})();
+</script>
+<link rel="stylesheet" href="style.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "StickyDesk",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "description": "StickyDesk 是一款 Windows 桌面便签：便签直接贴在桌面上，点开就写，支持待办到期提醒、图片与网址识别、全局搜索。绿色免安装，数据只存本地。",
+  "url": "https://ms67.github.io/StickyDesk/",
+  "downloadUrl": "https://github.com/Ms67/StickyDesk/releases/download/v1.0.3/StickyDesk-v1.0.3-win64.zip",
+  "softwareVersion": "1.0.3",
+  "inLanguage": "zh-CN",
+  "author": {
+    "@type": "Person",
+    "name": "Ms67",
+    "url": "https://github.com/Ms67"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CNY"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "我的便签数据存在哪里？会上传吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "存在程序同目录的 stickydesk.db （SQLite 文件）里，不上传、不需要注册账号。删掉整个文件夹就等于彻底删除。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "那它为什么要联网？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "联网只用于拉取广告数据：标题行的小广告位定时从公开推广列表拉取文案（拉不到就用本地缓存）。便签内容本身不需要联网。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "能换电脑带走吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。托盘菜单「便签迁移」会把程序和当前便签一起打包成 zip，新电脑解压双击就是原样。只想把软件发给朋友，用「分享给好友」——那个包里只有几条模板便签。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "支持 macOS 或手机吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "目前只做了 Windows。便签贴在桌面图层这件事依赖 Windows 的桌面窗口机制，移植到别的系统需要另一种实现。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "要钱吗？有会员吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "免费，没有会员、没有功能阉割、没有登录墙。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以在公司用吗？可以改造或二次开发吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "个人、公司、机构、团队内部以及商业场景都可以使用本软件。禁止的是盗版和改造：不得修改、汉化、改名、去广告、拆分、嵌入其他产品，或以本软件为基础开发、销售产品与服务；不得反编译、逆向分析；不得去除广告位与版权标识。完整、未修改的安装包可以免费原样转发给朋友。完整条款见 LICENSE 。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top">
+    <span class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M5 4.5h14v10.5l-4.5 4.5H5z"/><path d="M14.5 19.5V15H19"/>
+      </svg>
+    </span>
+    <span class="brand-name">StickyDesk</span>
+  </a>
+  <nav class="nav-links">
+    <a href="#demo">演示</a>
+    <a href="#features">功能</a>
+    <a href="#preview">界面</a>
+    <a href="#download">下载</a>
+    <a href="#faq">常见问题</a>
+    <a class="ghost" href="en.html" data-setlang="en">EN</a>
+    <a class="ghost" href="https://github.com/Ms67/StickyDesk" target="_blank" rel="noopener">GitHub ↗</a>
+  </nav>
+  <a class="btn btn-sm" href="#download">下载 v1.0.3</a>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-copy reveal">
+      <span class="pill">v1.0.3 · Windows 10 / 11 · 绿色免安装</span>
+      <h1>把待办<br>贴在桌面上。</h1>
+      <p class="lede">
+        不是藏在侧边栏里的清单，也不是要切窗口的 App。
+        StickyDesk 的便签就贴在桌面上——抬眼就能看见，
+        点一下就写，改完自动存。
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-lg" href="https://github.com/Ms67/StickyDesk/releases/download/v1.0.3/StickyDesk-v1.0.3-win64.zip">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 4v11"/><path d="M7.5 10.5 12 15l4.5-4.5"/><path d="M4.5 19.5h15"/>
+          </svg>
+          下载 Windows 版
+        </a>
+        <a class="link-arrow" href="#demo">观看 24 秒演示</a>
+      </div>
+      <ul class="facts">
+        <li><b>44 MB</b><span>单文件 + 数据</span></li>
+        <li><b>0</b><span>注册 / 登录 / 会员</span></li>
+        <li><b>本地</b><span>便签只存在你自己的电脑</span></li>
+      </ul>
+    </div>
+
+    <div class="hero-art reveal" aria-hidden="true">
+      <div class="wallpaper">
+        <div class="glow glow-a"></div>
+        <div class="glow glow-b"></div>
+
+        <article class="note n-yellow n1">
+          <div class="n-bar">
+            <span class="n-title">这周要做</span>
+            <span class="n-ad">广告</span>
+            <span class="n-more">⋯</span>
+          </div>
+          <ul class="n-items">
+            <li><i></i>整理客户回访名单</li>
+            <li class="done"><i></i>把上季度报表发给财务</li>
+            <li><i></i>周三 15:00 项目评审<span class="due d-y">还剩 2 天</span></li>
+            <li><i></i>订周五的高铁票</li>
+          </ul>
+        </article>
+
+        <article class="note n-pink n2">
+          <div class="n-bar">
+            <span class="n-title">灵感</span>
+            <span class="n-ad">广告</span>
+            <span class="n-more">⋯</span>
+          </div>
+          <ul class="n-items">
+            <li><i></i>首页那句文案再短一点</li>
+            <li><i></i>把「待办」做成可勾的小方块</li>
+            <li><i></i>配色试试暖纸黄</li>
+          </ul>
+        </article>
+
+        <article class="note n-green n3">
+          <div class="n-bar">
+            <span class="n-title">采购</span>
+            <span class="n-ad">广告</span>
+            <span class="n-more">⋯</span>
+          </div>
+          <ul class="n-items">
+            <li><i></i>A4 打印纸 × 2</li>
+            <li class="done"><i></i>咖啡豆（深烘）</li>
+            <li><i></i>新的白板笔</li>
+          </ul>
+        </article>
+
+        <div class="tray">
+          <span class="tray-dot"></span>
+          <span class="tray-tip">右键出菜单 · 双击显示全部便签</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 一句话定位 ============ -->
+  <section class="strip reveal">
+    <p>
+      便签挂在<strong>桌面图层</strong>上——不是悬浮窗，也不是托盘弹窗。
+      按 <kbd>Win</kbd> + <kbd>D</kbd> 回到桌面，它还在原地等你。
+    </p>
+  </section>
+
+  <!-- ============ 产品动画演示 ============ -->
+  <section class="section demo-section" id="demo">
+    <header class="sec-head reveal">
+      <span class="eyebrow">24 秒产品演示</span>
+      <h2>从贴上桌面，到完成待办</h2>
+      <p>不用切换窗口：抬眼看见、点一下直接写、做完打个勾。最后也有与微软便签的 Win+D 对比。</p>
+    </header>
+    <div class="demo-shell reveal">
+      <iframe src="demo.html?embed=1&amp;ratio=16x9&amp;speed=0.75"
+              loading="lazy" allow="fullscreen" title="StickyDesk 24 秒产品演示"
+              referrerpolicy="no-referrer"></iframe>
+    </div>
+    <div class="demo-foot reveal">
+      <span>真实界面演示 · 循环播放</span>
+    </div>
+  </section>
+
+  <!-- ============ 功能 ============ -->
+  <section class="section" id="features">
+    <header class="sec-head reveal">
+      <span class="eyebrow">功能</span>
+      <h2>该有的都有，不该有的没有</h2>
+      <p>没有账号、没有云同步、没有会员弹窗。你写的东西，就留在你那台电脑上。</p>
+    </header>
+
+    <div class="grid">
+      <article class="card reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4.5" width="13" height="15" rx="2"/><path d="M16 9h5v8.5a2 2 0 0 1-2 2h-3"/>
+          </svg>
+        </div>
+        <h3>贴桌面，不抢焦点</h3>
+        <p>便签是桌面的一部分，不占任务栏、不挡其他窗口；按 Win+D 显示桌面时也不会被收走。</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 20h4l10-10a2.5 2.5 0 0 0-3.5-3.5L4.5 16.5z"/><path d="M13.5 7 17 10.5"/>
+          </svg>
+        </div>
+        <h3>点开就写，改完自动存</h3>
+        <p>点一下正文就进入编辑，没有「保存」按钮。标题单独一行，正文滚到哪儿标题都不动。</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><path d="M7.5 12.2l2.6 2.6 5-5.4"/>
+          </svg>
+        </div>
+        <h3>待办能勾，还能提醒</h3>
+        <p>待办行首是空心小方块，编辑时点一下方块就打钩。设个到期时间（Ctrl+Shift+T），那一行后面就挂倒计时：还剩 2 天、还剩 3 小时、已过期。</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="8.5" cy="10" r="1.4"/><path d="M4 17l4.5-4.5 3.5 3.5 3-2.5L20 17"/>
+          </svg>
+        </div>
+        <h3>图片、网址、文件夹都塞得下</h3>
+        <p>截图直接粘进便签。正文里的网址点一下用浏览器打开，本地路径点一下打开资源管理器。</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l4.5 4.5"/>
+          </svg>
+        </div>
+        <h3>一搜即达</h3>
+        <p>跨所有便签搜内容，包括被隐藏的便签。回车直接跳到那一行，不用一张张翻。</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 7.5h9"/><path d="M4 12h6"/><path d="M4 16.5h9"/><path d="M17 5v9"/><path d="M13.8 10.8 17 14l3.2-3.2"/>
+          </svg>
+        </div>
+        <h3>换电脑不丢</h3>
+        <p>托盘「便签迁移」把程序和便签一起打包，新电脑解压双击就是原样；「分享给好友」只带几条模板便签，不带你自己的内容。</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="8"/><path d="M12 4a10 10 0 0 1 0 16"/><circle cx="8.5" cy="9" r="1.1" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <h3>八种配色</h3>
+        <p>黄、绿、粉、紫、蓝、灰、深色……每张便签各选各的，一眼分出轻重缓急。</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><path d="M3.5 9h17"/><circle cx="6.5" cy="6.8" r="0.9" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <h3>托盘全管</h3>
+        <p>新建、搜索、一键显示/隐藏、开机自启、导出 Excel、导入 Excel —— 全在托盘菜单里，桌面不用摆一排按钮。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 界面 ============ -->
+  <section class="section section-alt" id="preview">
+    <header class="sec-head reveal">
+      <span class="eyebrow">界面</span>
+      <h2>就这么几块，全在桌面上</h2>
+      <p>标题行右边是「⋯」，鼠标移上去向下浮出：新建、隐藏这张、显示/隐藏已完成、换色、删除。</p>
+    </header>
+
+    <div class="shot reveal" aria-hidden="true">
+      <div class="shot-note">
+        <div class="sn-bar">
+          <span class="sn-title">周一 · 例会</span>
+          <span class="sn-ad">广告</span>
+          <span class="sn-more">⋯</span>
+        </div>
+        <div class="sn-body">
+          <p class="sn-h">本周重点</p>
+          <p><span class="sn-bullet"></span>过一遍上周的数据异常</p>
+          <p><span class="sn-bullet done"></span><s>整理会议纪要</s></p>
+          <p><span class="sn-bullet"></span>和设计对齐改版稿<span class="due d-g">还剩 3 小时</span></p>
+          <p class="sn-h2">随手记</p>
+          <p><span class="sn-bullet"></span>客户说喜欢暖一点的配色</p>
+          <p><span class="sn-bullet"></span>把「待办」这个词换成「要做」试试</p>
+          <p class="sn-note">https://github.com/Ms67/StickyDesk</p>
+        </div>
+        <div class="sn-resize"></div>
+      </div>
+
+      <div class="shot-side">
+        <div class="mini-card">
+          <span class="mini-k">格式栏</span>
+          <div class="mini-row">
+            <span class="kbtn b">B</span><span class="kbtn i">I</span><span class="kbtn u">U</span>
+            <span class="kbtn s">S</span><span class="kbtn hl">H</span><span class="kbtn">•</span>
+            <span class="kbtn ok">✓</span><span class="kbtn">⏰</span>
+          </div>
+          <p class="mini-h">编辑时才出现，不占地方</p>
+        </div>
+        <div class="mini-card">
+          <span class="mini-k">托盘菜单</span>
+          <ul class="mini-menu">
+            <li>新建便签</li><li>搜索便签</li><li>显示 / 隐藏所有便签</li>
+            <li>创建桌面快捷方式</li><li>开机启动</li><li>便签迁移</li>
+            <li>分享给好友</li><li class="sep">退出软件</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 下载 ============ -->
+  <section class="section" id="download">
+    <div class="dl reveal">
+      <div class="dl-copy">
+        <span class="eyebrow">下载</span>
+        <h2>带走一份，解压就能用</h2>
+        <p class="dl-sub">绿色版，不写注册表、不要管理员权限。放到 U 盘里换台电脑也照样跑。</p>
+
+        <a class="btn btn-lg btn-wide" href="https://github.com/Ms67/StickyDesk/releases/download/v1.0.3/StickyDesk-v1.0.3-win64.zip">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 4v11"/><path d="M7.5 10.5 12 15l4.5-4.5"/><path d="M4.5 19.5h15"/>
+          </svg>
+          下载 StickyDesk v1.0.3
+        </a>
+        <p class="dl-meta">Windows 10 / 11（64 位）· 约 44 MB · 更新于 2026-11-25 · 点击即开始下载</p>
+
+        <ol class="steps">
+          <li><b>解压</b><span>把 zip 解压到一个空文件夹，例如 <code>D:\StickyDesk</code></span></li>
+          <li><b>双击</b><span>运行 <code>StickyDesk-1.0.3.exe</code>，预置便签出现在桌面</span></li>
+          <li><b>常驻</b><span>之后都在托盘图标里操作：右键出菜单，双击显示全部</span></li>
+        </ol>
+      </div>
+
+      <aside class="dl-card">
+        <div class="dl-card-top">
+          <span class="tag">最新版本</span>
+          <span class="ver">v1.0.3</span>
+        </div>
+        <p class="ver-note">当前为最新版本 · 直接解压到旧文件夹即可升级，便签数据不受影响</p>
+        <dl class="specs">
+          <div><dt>安装包</dt><dd>StickyDesk-v1.0.3-win64.zip</dd></div>
+          <div><dt>大小</dt><dd>44 MB</dd></div>
+          <div><dt>系统</dt><dd>Windows 10 / 11 64 位</dd></div>
+          <div><dt>依赖</dt><dd>无（免安装、免运行库）</dd></div>
+        </dl>
+        <div class="warn">
+          <strong>首次运行被拦？</strong>
+          <p>程序没有购买代码签名证书，Windows 会提示「已保护你的电脑」。点 <b>更多信息 → 仍要运行</b> 即可。</p>
+        </div>
+        <a class="link-arrow sm" href="https://github.com/Ms67/StickyDesk/releases" target="_blank" rel="noopener">查看历史版本 ↗</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section section-alt" id="faq">
+    <header class="sec-head reveal">
+      <span class="eyebrow">常见问题</span>
+      <h2>你可能想先知道</h2>
+    </header>
+
+    <div class="faq">
+      <details class="reveal" open>
+        <summary>我的便签数据存在哪里？会上传吗？</summary>
+        <p>存在程序同目录的 <code>stickydesk.db</code>（SQLite 文件）里，不上传、不需要注册账号。删掉整个文件夹就等于彻底删除。</p>
+      </details>
+      <details class="reveal">
+        <summary>那它为什么要联网？</summary>
+        <p>联网只用于拉取广告数据：标题行的小广告位会定时从公开推广列表拉取文案（拉不到就用本地缓存）。便签内容本身不需要联网。</p>
+      </details>
+      <details class="reveal">
+        <summary>能换电脑带走吗？</summary>
+        <p>可以。托盘菜单「便签迁移」会把程序和当前便签一起打包成 zip，新电脑解压双击就是原样。只想把软件发给朋友，用「分享给好友」——那个包里只有几条模板便签。</p>
+      </details>
+      <details class="reveal">
+        <summary>支持 macOS 或手机吗？</summary>
+        <p>目前只做了 Windows。便签贴在桌面图层这件事依赖 Windows 的桌面窗口机制，移植到别的系统需要另一种实现。</p>
+      </details>
+      <details class="reveal">
+        <summary>要钱吗？有会员吗？</summary>
+        <p>免费，没有会员、没有功能阉割、没有登录墙。</p>
+      </details>
+      <details class="reveal">
+        <summary>可以在公司用吗？可以改造或二次开发吗？</summary>
+        <p><b>可以放心用。</b>个人、公司、机构、团队内部以及商业场景都可以使用本软件。禁止的是盗版和改造：不得修改、汉化、改名、去广告、拆分、嵌入其他产品，或以本软件为基础开发、销售产品与服务；不得反编译、逆向分析；不得去除广告位与版权标识。完整、未修改的安装包可以免费原样转发给朋友。完整条款见 <a href="https://github.com/Ms67/StickyDesk/blob/main/LICENSE" target="_blank" rel="noopener">LICENSE</a>。</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ 收尾 ============ -->
+  <section class="closing reveal">
+    <h2>桌面空出来的那点地方，<br>正好放几句要紧的事。</h2>
+    <a class="btn btn-lg" href="https://github.com/Ms67/StickyDesk/releases/download/v1.0.3/StickyDesk-v1.0.3-win64.zip">下载 StickyDesk</a>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-brand">
+      <span class="brand-mark small" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M5 4.5h14v10.5l-4.5 4.5H5z"/><path d="M14.5 19.5V15H19"/>
+        </svg>
+      </span>
+      <span>StickyDesk 桌面便签</span>
+    </div>
+    <nav class="foot-links">
+      <a href="https://github.com/Ms67/StickyDesk" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/Ms67/StickyDesk/releases" target="_blank" rel="noopener">Releases</a>
+      <a href="https://github.com/Ms67/StickyDesk/blob/main/LICENSE" target="_blank" rel="noopener">许可协议</a>
+      <a href="en.html" data-setlang="en">EN</a>
+      <a href="#download">下载</a>
+    </nav>
+    <p class="foot-copy">v1.0.3 · 2026 · 便签数据仅存本地 · 可自由使用，禁止盗版、修改与二次开发</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+/* 点语言链接时记住选择，避免下次又被浏览器语言改回去 */
+document.querySelectorAll("[data-setlang]").forEach(function (a) {
+  a.addEventListener("click", function () {
+    try { localStorage.setItem("sd_lang", a.getAttribute("data-setlang")); } catch (e) {}
+  });
+});
+</script>
+</body>
+</html>
